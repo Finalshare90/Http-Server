@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Built-By: finalshare
+Build-Jdk: 17.0.5
+Class-Path: 3ml-core-0.0.1-alpha.jar
+Main-Class: finalshare.httpserver.Main
+Created-By: Maven Integration for Eclipse
+
