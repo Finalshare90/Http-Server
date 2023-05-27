@@ -33,13 +33,7 @@ public class Main {
     		
     		
     		RequestHandler handler = new RequestHandler(requestData, tagHandler);
-    		
-    		// TODO: Criar um handler para processar as requests em Strings
-    		// NOTE: os chars vazios *não são null, mas um character vazio*, use com sabedoria
-    		//for(int count = 0; count < requestData.length; count++) {
-    			//System.out.print(requestData[count]);    		
-    		//}
-    		
+			
     		PrintWriter socketDataOut = new PrintWriter(socket.getOutputStream());
     		
     		List<String> data = handler.parseRequest();
