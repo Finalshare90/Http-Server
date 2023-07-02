@@ -18,10 +18,12 @@ public class Main {
     	try {
     		
     		while(true) {
-    		tagHandler.parserInit(new Parser("config.3ml"));
+    		tagHandler.parserInit(new Parser("config.3ml"));    		
     		ServerSocket server = new ServerSocket(Integer.parseInt(
 					 							   tagHandler.call("port")
 					 							   .data.get(0)));
+    		
+    		
     		Socket socket =	server.accept();			
     		char[]requestData = new char[3000];
     		
@@ -33,7 +35,7 @@ public class Main {
     		
     		
     		RequestHandler handler = new RequestHandler(requestData, tagHandler);
-			
+    		
     		PrintWriter socketDataOut = new PrintWriter(socket.getOutputStream());
     		
     		List<String> data = handler.parseRequest();

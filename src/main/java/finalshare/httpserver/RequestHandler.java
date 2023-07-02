@@ -19,21 +19,27 @@ public class RequestHandler {
 		createHeaders();
 		initFiles();
 		
-		String tmpLine = "";
+		formatRequest(data);
+		debugRequest(data);
 		
-		for(int count2 = 0, count = 0; count < data.length; count++){
-			if(data[count] != ' '){
-				tmpLine = tmpLine + Character.toString(data[count]);
+	}
+	private void formatRequest(char[]data) {
+		String formatedRequest = "";
+		
+		for(int requestPosition = 0; requestPosition < data.length; requestPosition++){
+			if(data[requestPosition] != ' '){
+				formatedRequest = formatedRequest + Character.toString(data[requestPosition]);
 			}else {
-				
-				processedData.add(tmpLine);
-				System.out.println(count2+": "+processedData.get(count2));
-				count2++;
-				tmpLine = "";
+				processedData.add(formatedRequest);
+				formatedRequest = "";
 			}
-			
 		}
-		
+	}
+	
+	private void debugRequest(char[]data){
+		for(int currentData = 0; currentData < processedData.size(); currentData++){
+			System.out.println(currentData+": " + processedData.get(currentData));
+		}
 	}
 	
 	private void createHeaders() {
@@ -47,7 +53,7 @@ public class RequestHandler {
 		
 		List<String>notFoundtag, indexTag, filesTag, pageTag = tagProtocol.call("pages").data;
 		indexTag = tagProtocol.call("index").data;
-		notFoundtag = tagProtocol.call("notfound").data;
+		notFoundtag = tagProtocol.call("404").data;
 		filesTag = tagProtocol.call("files").data;
 		
 		filesTable.put("/404", new Page(notFoundtag.get(0), HeaderType.NOTFOUND));
@@ -88,6 +94,5 @@ public class RequestHandler {
 		
 		return content;
 	}
-	
 	
 }

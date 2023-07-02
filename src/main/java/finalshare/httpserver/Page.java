@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Page {
 	
 	HeaderType status;
-	private ArrayList<String> content = new ArrayList<>();
+	private ArrayList<String> content = new ArrayList<>();;
 	private File file;
 	
 	public Page(String fileName, HeaderType status){
