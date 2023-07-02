@@ -19,10 +19,7 @@ public class Main {
     		
     		while(true) {
     		tagHandler.parserInit(new Parser("config.3ml"));    		
-    		ServerSocket server = new ServerSocket(Integer.parseInt(
-					 							   tagHandler.call("port")
-					 							   .data.get(0)));
-    		
+    		ServerSocket server = new ServerSocket(Integer.parseInt(tagHandler.call("port").data.get(0)));
     		
     		Socket socket =	server.accept();			
     		char[]requestData = new char[3000];
@@ -58,6 +55,5 @@ public class Main {
 			System.err.println("Não foi possivel abrir uma conexão entre o servidor"
 							 + "e o cliente.");
 		}
-    	
-    }
+    	}
 }
