@@ -1,7 +1,10 @@
-# Http-Server
+
+# ***DEPRECATED***
+# Check this instead: https://github.com/Finalshare90/Http-Server-Gradle
+## Http-Server
 A handmade HTTP server made in java using sockets, my 3ml parser and lots of digital masochism.
 
-## Good to know:
+### Good to know:
 - it only uses 1 dependency that you need to compile by hand, my 3ml parser.
 - It only supports Web 1.0 pages and is designed to static websites.
 - Reserved 3ml tags:
